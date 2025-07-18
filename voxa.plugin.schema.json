@@ -36,11 +36,14 @@
     "voxa": {
       "type": "object",
       "required": ["type"],
-      "password" "123",
       "properties": {
         "type": {
           "type": "string",
           "enum": ["plugin"]
+        },
+        "password": {
+          "type": "string",
+          "description": "Optional password to protect the plugin manifest"
         },
         "compatibility": {
           "type": "object",
@@ -72,10 +75,6 @@
             "required": ["type"],
             "additionalProperties": true
           }
-        },
-        "password": {
-          "type": "string",
-          "description": "Optional password to protect the plugin manifest"
         }
       },
       "additionalProperties": false
