@@ -36,6 +36,7 @@
     "voxa": {
       "type": "object",
       "required": ["type"],
+      "password" "123",
       "properties": {
         "type": {
           "type": "string",
