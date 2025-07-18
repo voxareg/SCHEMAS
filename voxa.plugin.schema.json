@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Voxa Plugin Manifest",
+  "type": "object",
+  "required": ["name", "version", "entry", "voxa"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the plugin"
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version of the plugin"
+    },
+    "description": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "entry": {
+      "type": "string",
+      "description": "Path to the plugin entry file"
+    },
+    "keywords": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "voxa": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["plugin"]
+        },
+        "compatibility": {
+          "type": "object",
+          "properties": {
+            "voxaVersion": {
+              "type": "string",
+              "description": "Compatible Voxa version range"
+            }
+          },
+          "additionalProperties": false
+        },
+        "hooks": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "configSchema": {
+          "type": "object",
+          "description": "Schema for plugin-specific config options",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string" },
+              "default": {},
+              "enum": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": ["type"],
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
