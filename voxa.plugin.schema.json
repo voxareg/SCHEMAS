@@ -71,6 +71,10 @@
             "required": ["type"],
             "additionalProperties": true
           }
+        },
+        "password": {
+          "type": "string",
+          "description": "Optional password to protect the plugin manifest"
         }
       },
       "additionalProperties": false
